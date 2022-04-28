@@ -14,16 +14,18 @@ notes.post('/', (req, res) => {
     // Log that a POST request was received
     console.info(`${req.method} request received to add a note`);
   
+    console.log(req.body);
+
     // Destructuring assignment for the items in req.body
-    const { noteTitle, noteText } = req.body;
+    const { title, text } = req.body;
   
     // If all the required properties are present
-    if (noteTitle && noteText) {
+    if (title && text) {
       // Variable for the object we will save
       const newNote = {
-        noteTitle,
-        noteText,
-        note_id: uuidv4(),
+        title,
+        text,
+        id: uuidv4(),
       };
   
       readAndAppend(newNote, './db/db.json');
