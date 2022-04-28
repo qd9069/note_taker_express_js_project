@@ -53,6 +53,7 @@ notes.delete('/:id',(req, res) => {
     // run the function to delete note
     readAndRemove(req.params.id, './db/db.json');
 
+    res.json(`Note with ${req.params.id} has been deleted 🗑️`);
 });
 
 

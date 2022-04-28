@@ -44,28 +44,16 @@ const readAndRemove = (id, file) => {
             const parsedData = JSON.parse(data);
             
             console.log(parsedData);
-            // for loop to check for all array element
-           for (i=0; i < parsedData.length; i++) {
-               // if the id = array[i].id then delete it from the array
-                //console.log(parsedData[i]);
-                //console.log(parsedData[i].id);
 
-               if (id === parsedData[i].id) {
-                   console.log(parsedData[i]);
-                   
-                   const x = parsedData.splice(i,1);
-                   console.log(x);
-                   // stringify the array of notes again
-                   // write the file.
-                //    writeToFile(file, parsedData);
-               }
-           } 
+            // use filter() method to create a new array with notes that not containing the target id
+            const allNote = parsedData.filter((note) => note.id !== id);
 
-
+            console.log(allNote);
+            // stringify the array of allNote - this has been included in the writeToFile() function
+            // write the file.
+            writeToFile(file, allNote);
         }
     });
-
 };
-
 
 module.exports = { readFromFile, writeToFile, readAndAppend, readAndRemove };
