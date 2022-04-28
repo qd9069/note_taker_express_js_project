@@ -30,5 +30,42 @@ const readAndAppend = (content, file) => {
         }
     });
 };
-  
-module.exports = { readFromFile, writeToFile, readAndAppend };
+
+// function to remove note by id
+const readAndRemove = (id, file) => {
+
+    // take parameter for id of note that need to delete
+    // read the file
+    fs.readFile(file, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+        } else {
+             // parse the data back to array
+            const parsedData = JSON.parse(data);
+            
+            console.log(parsedData);
+            // for loop to check for all array element
+           for (i=0; i < parsedData.length; i++) {
+               // if the id = array[i].id then delete it from the array
+                //console.log(parsedData[i]);
+                //console.log(parsedData[i].id);
+
+               if (id === parsedData[i].id) {
+                   console.log(parsedData[i]);
+                   
+                   const x = parsedData.splice(i,1);
+                   console.log(x);
+                   // stringify the array of notes again
+                   // write the file.
+                //    writeToFile(file, parsedData);
+               }
+           } 
+
+
+        }
+    });
+
+};
+
+
+module.exports = { readFromFile, writeToFile, readAndAppend, readAndRemove };
