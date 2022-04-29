@@ -75,7 +75,7 @@ In terminal:
 
 ## Link
 
-**Please click [here](https://watch.screencastify.com) to find the deployed application in Heroku**
+**Please click [here](https://note-taker-express-js-123.herokuapp.com/) to find the deployed application in Heroku**
 
 ## License
 
