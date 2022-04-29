@@ -19,7 +19,7 @@ The Note Taker is a simiple application that can be used to write and save notes
 
 ## Installation
 
-For user - no installation needed, please visit the deployed link directly
+For user - no installation needed, please visit the deployed [application link](https://note-taker-express-js-123.herokuapp.com/) directly
 
 For contributor - please run the command `npm i` before starting the application
 
@@ -38,8 +38,6 @@ Here is a simple usage instruction for the Note Taker application:
     - Click on the save icon to save your note
 - Click on the trash can icon to delete any existing note as needed
 
-
-
 ## Technology
 ```md
 JavaScript
@@ -47,7 +45,6 @@ Express.js
 HTML (provided with the starter code)
 CSS (provided with the starter code)
 ```
-
 
 ## Credits
 
