@@ -43,12 +43,13 @@ const readAndRemove = (id, file) => {
              // parse the data back to array
             const parsedData = JSON.parse(data);
             
-            console.log(parsedData);
+            // console.log(parsedData);
 
             // use filter() method to create a new array with notes that not containing the target id
             const allNote = parsedData.filter((note) => note.id !== id);
 
-            console.log(allNote);
+            // console.log(allNote);
+
             // stringify the array of allNote - this has been included in the writeToFile() function
             // write the file.
             writeToFile(file, allNote);

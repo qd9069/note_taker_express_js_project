@@ -47,13 +47,15 @@ notes.delete('/:id',(req, res) => {
     // Log that a DELETE request was received
     console.info(`${req.method} request received to delete a note`);
 
-    console.log("req.params", req.params);
-    console.log("req.params.id", req.params.id);
+    // console.log("req.params", req.params);
+    console.log("delete note with id", req.params.id);
 
     // run the function to delete note
     readAndRemove(req.params.id, './db/db.json');
 
-    res.json(`Note with ${req.params.id} has been deleted 🗑️`);
+    // Respond to the DELETE request
+    res.json(`Note with ID: ${req.params.id} has been deleted 🗑️`);
+
 });
 
 
